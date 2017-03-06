@@ -1,0 +1,17 @@
+\section{Conclusion}
+In this project I have researched if the use of an image sensor for maze mapping could be beneficial and lead to improvement of the maze mapping over the Lego robots. \\
+
+Most likely my implementation can improve the accuracy of the characterization of the maze by using an image sensor. Accuracy on terms of accurately presenting the wall segments is definitely improved in my implementation, since the Hough transform is based on the assumption that we are looking for straight wall segments. Tests showed accuracy within one percent of the total wall length on the wall segments detected, which indicates that the system might be able to accurately map the maze, and improve over the mapping of the Lego robots.\\
+
+The biggest built in benefit of using an image sensor and image processing to map the maze is the fact that the system is detecting straight line segments. This eliminates the curved edges experienced in the previous applications of Lego robot mapping. The system will represent the maze as a mapping of several straight wall segments in the xy-plane, and not as a point cluster. By using an image sensor we are able to take benefit of the built-in assumptions in the Hough transform.\\
+
+The Canny edge detection algorithm, together with the Hough transform edge linking algorithm proves to be the best suited for the project application. This is well documented in \cite{g} as the algorithms of choice when doing mapping. The Canny edge detection algorithm is the only algorithm that truly takes advantage of the top of the wall being darker than the rest of the wall. As explained previously, the Hough transform does not always completely detect the wall segments, so this is something that needs improvement and more work.\\
+
+In order for this implementation to work satisfactory the UAV needs to make the following measurements:
+\begin{itemize}
+\item Accurate height measurement
+\item Accurate position measurement in the xy-plane
+\item Attitude measurement to relate the mapping position frame to the real life position frame
+\end{itemize}
+
+

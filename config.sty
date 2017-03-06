@@ -1,0 +1,149 @@
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{pdflscape}
+\usepackage{varioref}
+\usepackage[titletoc]{appendix}
+%\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+%\usepackage[demo]{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+% fancy ntnu front
+\usepackage{verbatim}
+\usepackage{cite}
+
+
+\newcommand{\SubTitle}{}
+\newcommand{\DegreeType}{Project thesis in Cybernetics and Robotics}
+\newcommand{\Faculty}{IME}
+\newcommand{\Department}{Institutt for teknisk kybernetikk}
+\newcommand{\CopyrightNotice}{}
+\newcommand{\ISBNPrinted}{N/A}
+\newcommand{\ISBNElectronic}{N/A}
+\newcommand{\SerialNumber}{\number\year:N/A}
+\newcommand{\Month}{\ifcase\month\or
+	Januar\or Februar\or Mars\or April\or May\or Juni\or
+	July\or August\or September\or October\or November\or December\fi}
+\newcommand{\Year}{\number\year}
+
+\newcommand{\printandscreen}[2]{\ifthenelse{\isundefined{\ScreenMode}}{#1}{#2}}
+
+
+
+
+\makeatletter
+\newcommand{\thickhline}{%
+    \noalign {\ifnum 0=`}\fi \hrule height 1pt
+    \futurelet \reserved@a \@xhline
+}
+\usepackage{makecell}
+
+
+
+
+\renewcommand{\maketitle}{
+	\begin{titlepage} 
+	\includegraphics[width=0.4\textwidth]{fig/hovedlogo_eng}\\
+
+	\parindent=0cm
+	\addtolength{\parskip}{\baselineskip}
+
+	{\huge \textbf{\@title}}
+    \bigbreak
+    \LARGE{\@author}
+    \vfill
+
+	{\large 
+    \DegreeType \\
+	Trondheim, \Month\ \Year\\
+	Supervisor: Tor Onshus
+    \bigbreak
+    
+	Norwegian University of Science and Technology \\
+	Department of Engineering Cybernetics}
+
+
+
+
+	\end{titlepage}
+}
+
+%% override style for chapter headers
+%\usepackage{titlesec}
+%\titleformat
+%{\chapter} % command
+%[display] % shape
+%{\bfseries\Large\itshape} % format
+%{}%{Story No. \ \thechapter} % label
+%{0.5ex} % sep
+%{
+%    \rule{\textwidth}{1pt}
+%    \vspace{1ex}
+%    \centering
+%} % before-code
+%[
+%\vspace{-0.5ex}%
+%\rule{\textwidth}{0.3pt}
+%] % after-code
+
+
+% ===== Graphics ========
+\usepackage{graphicx}
+%\usepackage[hmarginratio=1.5:1]{geometry}
+
+
+% Printing stuff
+
+% Margins
+\usepackage[inner=4cm,outer=4cm,bottom=4cm,top=4cm]{geometry}
+
+% Page number positioning
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{} % clear all header and footers
+%\fancyfoot[LE,RO]{\thepage}
+
+% Start section at odd page number
+\let\oldsection\section
+\def\section{\cleardoublepage\oldsection}
+
+\usepackage{float}
+% Graphicfix
+\graphicspath{{fig/}}
+
+% ===== Hyperref ========
+\usepackage{hyperref}
+
+% ===== Mathematics =====
+\usepackage{amsmath, amssymb}
+
+% ===== Page structure ==
+%\usepackage[margin=1.4in]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+
+%MATLAB
+\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\usepackage{booktabs}
+\usepackage{blindtext}
+\usepackage{tabularx}
+\usepackage{pdfpages}
+\usepackage{longtable}
+
+% Contentsfix
+\usepackage[nottoc,numbib]{tocbibind}
+
+
+% Referencesfix (underscores)
+%\usepackage{underscore}
+
+% pdfpackages fix
+\usepackage{pdfpages}
+
+\setlength\parindent{0pt}
+
+% For allowing numbered paragraphs
+\setcounter{secnumdepth}{5}

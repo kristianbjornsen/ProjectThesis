@@ -1,0 +1,18 @@
+\section{Future Work}
+\begin{itemize}
+\item Lens distortion correction. Try using the method involving checkerboard pattern calibration to extract the camera parameters for correction. This will improve the consistency of the measurements across the board.
+\item Tune edge detection algorithm in terms of height. This is very beneficial if we want a system that can take images at different heights of the maze. Will improve accuracy.
+\item GSD with an angle $\neq 90 \deg$. At the moment the system is assumed to be taking an image normal to the ground- and wall plane. With a GSD angle $\neq 90 \deg$ there will be more work to transform the image from a 3-D image to the 2-D xy-plane.
+\item Specify the components of the UAV to be used in this implementation:
+\begin{itemize}
+\item UAV frame (size)
+\item Communication module
+\item Autopilot
+\item Sensor-package including image sensor
+\item Processing power
+\item Image processing on-board or on server?
+\end{itemize}
+
+\item More research on the Hough transform, and how we can assure that we detect the whole wall segment.
+
+\end{itemize}

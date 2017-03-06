@@ -1,0 +1,32 @@
+\section*{Abstract}
+This project report features a new implementation of maze mapping relative to the Lego-robots. The maze mapping has been implemented in Matlab and verified in real-life testing scenarios. 
+\subsection*{Image processing}
+An image processing implementation has been developed that is able to detect complete edge segments in images captured by an image sensor. The software is implemented in Matlab using built-in functions in the Matlab library together with functionality developed my me.\\
+
+The image processing implementation is based on the Canny edge detection algorithm in conjunction with the Hough transform edge linking algorithm. The software gives the user the ability to detect and plot edges of a maze in pixel coordinates. The software is documented in such a way that it should be relatively easy to implement it in a faster and more agile programming language if we wish to implement it on a smaller computer chip. 
+
+\subsection*{Mapping}
+Mapping has been implemented together with the image processing software, and is able to map the detected wall segments relative to the image sensor position in real-life units. \\
+
+This software implementation features calculation of Ground Sample Distance and the algorithm uses this information to transform the detected edges in the image processing implementation from pixel units to real-life units.
+
+\subsection*{Verification tests}
+The implementation has been tested on a real life test maze, and the system is able to improve the identification of maze characteristics over the Lego-robots.
+\begin{itemize}
+\item The system is able to map the maze in real-life values within a certainty of $1\%$ of the respective wall segment lengths
+\item The background theory and assumptions made is verified and does indeed work
+\item More work is needed to ensure reliability of the implementation under changes of height, scaling and environmental variables
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+

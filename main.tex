@@ -1,5 +1,68 @@
 \documentclass{article}
-\usepackage[utf8]{inputenc}
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\normalsize\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+\usepackage{config}
+\include{forside}
+
 \begin{document}
-(Type your content here.)
+\pagenumbering{gobble} % no page number on title page
+
+
+\maketitle
+\clearpage\mbox{}\clearpage %Insert blank page
+\rfoot{\thepage \hspace{1pt}}
+\pagenumbering{roman} % roman page numbers for ToC etc
+\setcounter{page}{2}
+
+%alle disse includesene skal ikke ha tall. så i starten av hver blir det \include*{xxxxxxx}
+
+\include{oppgavebeskrivelse}
+\include{forord}
+\include{sammendrag}
+%\include{forkortelser}
+\tableofcontents
+\newpage
+\begingroup
+\pagestyle{empty}
+\listoffigures
+\newpage
+\listoftables
+\endgroup
+
+\newpage
+
+
+% include makes new page
+% input does not
+
+\clearpage
+
+\pagenumbering{arabic}
+
+\input{innledning}
+\input{theory}
+\input{implementation}
+\input{testing}
+\input{sourcesoferror}
+\input{discussion}
+\input{conclusion}
+\input{futurework}
+\input{references}
+
+\setcounter{section}{0}
+\renewcommand\thesection{\Alph{section}}
+
+\begin{appendices}
+
+\include{appendix_a}
+
+\end{appendices}
+
+
 \end{document}
